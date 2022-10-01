@@ -1,0 +1,14 @@
+/* Remove margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Turn header into flexbox, with adjustable height*/
+#header {
+  background: no-repeat left/cover url("../images/banner.jpg");
+  display: flex;
+  height: 15vh;
+  width: 100%;
+  align-items: center;
+}

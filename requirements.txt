@@ -1,0 +1,7 @@
+flask
+gunicorn
+cryptography
+flask-socketio
+eventlet
+Flask-Failsafe
+mysql-connector-python

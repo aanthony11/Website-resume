@@ -1,0 +1,110 @@
+{% extends 'shared/layout.html' %}
+{% block extracss%}
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/css/wordle.css') }}">
+{% endblock%}
+
+{% block extrajs %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{ url_for('static', filename='main/js/wordle.js') }}" defer></script>
+{% endblock %}
+
+{% block maincontent %}
+  <p id="first">{{ first_wordle }}</p>
+	<header>
+	  <h1 class="title">WORDLE</h1>
+	</header>
+
+  {% if score != None %}
+   <!-- User has already played today's wordle -->
+   <div id="leaderboard">
+    <h1 class="title">Leaderboard</h1>
+    <h2 class="title">{{hiddenWord}}</h2>
+    <br>
+      <h3 class="user-header">User</h3>
+      <h3 class="score-header">Score</h3>
+      <br><br>
+     <ul>
+      {% if topFive|length < 0 %}
+        <h4 class="title">No Users have completed today's wordle :(</h4>
+
+      {% else %}
+
+      {% for user in topFive %}
+        {% if user["score"] != None %}
+      <li class="email">{{user["email"]}}</li>
+      <br>
+      <li class="score">{{user["score"]}}</li>
+      <br>
+        {% endif %}
+      {% endfor %}
+
+      {% endif %}
+     </ul>
+   </div>
+  {% else %}
+    <!-- User hasn't finished today's wordle -->
+      <div id="board-container">
+        <div id="board"></div>
+      </div>
+
+      <br><br>
+      <div id="keyboard-container">
+              <div class="keyboard-row">
+                <button data-key="q">q</button>
+                <button data-key="w">w</button>
+                <button data-key="e">e</button>
+                <button data-key="r">r</button>
+                <button data-key="t">t</button>
+                <button data-key="y">y</button>
+                <button data-key="u">u</button>
+                <button data-key="i">i</button>
+                <button data-key="o">o</button>
+                <button data-key="p">p</button>
+              </div>
+              <div class="keyboard-row">
+                <div class="spacer-half"></div>
+                <button data-key="a">a</button>
+                <button data-key="s">s</button>
+                <button data-key="d">d</button>
+                <button data-key="f">f</button>
+                <button data-key="g">g</button>
+                <button data-key="h">h</button>
+                <button data-key="j">j</button>
+                <button data-key="k">k</button>
+                <button data-key="l">l</button>
+                <div class="spacer-half"></div>
+              </div>
+              <div class="keyboard-row">
+                <button data-key="enter" class="wide-button">Enter</button>
+                <button data-key="z">z</button>
+                <button data-key="x">x</button>
+                <button data-key="c">c</button>
+                <button data-key="v">v</button>
+                <button data-key="b">b</button>
+                <button data-key="n">n</button>
+                <button data-key="m">m</button>
+                <button data-key="del" class="wide-button">Del</button>
+              </div>
+      </div>
+  {% endif%}
+
+  <div class="wordle-help" id="help">
+    <h3 class="instructions">Guess the WORDLE.</h3>
+    <br>
+    <ul>
+      <li class="description">Each guess must be a valid word. Hit the enter button to submit. After each guess, the color of the tile will signify how close to the word your guess was.</li>
+      <br><hr>
+      <li class="instructions">If the tile is <span class="green">GREEN</span> the letter is in the word and in the correct spot</li>
+      <li class="instructions">If the tile is <span class="yellow">YELLOW</span> the letter is in the word and in the wrong spot</li>
+      <li class="instructions">If the tile is <span class="gray">GRAY</span> the letter is not in the word</li>
+      <hr>
+      <p class="instructions">A new wordle is availble everyday!</p>
+    </ul>
+
+    <button class="close" onclick="toggleHelp()">CLOSE</button>
+    
+  </div>
+
+  <button class="wordle-button" onclick="toggleHelp()">Wordle Help</button>
+
+{% endblock %}

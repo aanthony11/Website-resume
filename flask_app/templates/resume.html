@@ -1,0 +1,62 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/resume.css') }}">
+
+      <!-- For each institution - generate a row --> 
+      {% for inst_id, inst in resume_data.items() %}
+      <h1 class="institutions">{{ inst['name']}} </h1>
+      <h2 class="location"> {{ inst['city']}}, {{inst['state']}}</h2>
+        {% if inst['positions'] != {} %}
+          <!-- For each position, display information -->
+          {% for pos_id, pos in inst['positions'].items() %}
+          <!-- displays end date if present in sql table -->
+          <h3 class="pos-title">{{ pos['title']}} </h3>
+            {% if pos['end_date'] == None %}
+              <p class="dates"> {{ pos['start_date']}} - Present</p>
+            {% else %}
+              <p class="dates">{{ pos['start_date']}} - {{pos['end_date']}}</p>
+            {% endif %}
+            <p class="responsibilities">{{ pos['responsibilities']}} </p>
+            <br>
+            {% if pos['experiences'] != {} %}
+              <!-- For each experience, display information -->
+              {% for exp_id, exp in pos['experiences'].items() %}
+                <ul>
+                  <li class="exp-list">
+                    <a 
+                    href="{{exp['hyperlink']}}"
+                    class="link">{{ exp['name'] }}:</a>
+                    {{exp['description']}}
+                  </li>
+                  <!-- Display skills if dictionary not empty -->
+                  {% if exp['skills'] != {} %}
+                    <p class="skills_tag">Skills used:</p>
+                  {% endif%}
+                </ul>
+
+                {% if exp['skills'] != {} %}
+                  {% for skill_id, skill in exp['skills'].items() %}
+                    <ul class="skills">
+                      <li>
+                        {{skill['name']}}
+                      </li>
+                    </ul>
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+            
+            {% endif %}
+
+          {% endfor %}
+        {% endif %}
+
+        <br>
+      <hr>
+      {% endfor %}
+
+
+
+{% endblock %}
+
+

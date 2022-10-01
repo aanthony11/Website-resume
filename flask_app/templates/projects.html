@@ -1,0 +1,66 @@
+<!-- Projects page -->
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/projects.css') }}">
+
+<!-- Main content of page - list of projects I've worked on -->
+<div>
+	<main>
+		<div class="row">
+			<p> <h2>Below is a list of projects I worked on in CSE 477:</h2> <br> Click an image, or hyperlink in the description to learn more!</p>
+			<hr>
+		</div>
+
+		<!-- Each row holds column for project image
+			 and description of the project -->
+		<div class="row">
+			<div class="column-img" id="img-piano">
+				<img src="../static/main/images/piano.jpeg" alt="Piano" loading="lazy" id="project-img">
+			</div>
+
+			<div class="column-text" id="projectText">
+				<p class="text"><h3>Javascript Piano</h3></p>
+				<p>
+					For my first homework assignment in CSE 477 I created an interactive piano using solely HTML, CSS, and Javascript. This tool highlights how to build a mobile-friendly application. <span> <a href="/piano"> Click here to see, and play the piano!</a></span>
+				</p> 
+			</div>
+		</div>
+
+		<!-- Spacing under project row -->
+		<div class="row"> <br> <br></div>
+
+		<div class="row">
+			<div class="column-img" id="img-piano">
+				<img src="../static/main/images/wordle.jpeg" alt="Wordle" loading="lazy" id="project-img">
+			</div>
+
+			<div class="column-text" id="projectText">
+				<p class="text"><h3>WORDLE</h3></p>
+				<p>
+					Want to get your daily wordle fix? Here it is! Wordle with a twist, length of words range from 5 to 13 letters. Have a blast and see if you do better than your friends. <span> <a href="/wordle"> Click here to see, and play today's wordle!</a></span>
+				</p> 
+			</div>
+		</div>
+
+		<div class="row"> <br> <br></div>
+
+
+		<div class="row">
+			<div class="column-img" id="img-piano">
+				<img src="../static/main/images/playlist.jpeg" alt="Wordle" loading="lazy" id="project-img">
+			</div>
+
+			<div class="column-text" id="projectText">
+				<p class="text"><h3>Playlist Maker</h3></p>
+				<p>
+					Need a quick playlist for background music? Here's your spotify playlist helper! Tell the app what genre's you want to hear, and get back to the conversation. <span> <a href="/playlist"> Click here to see, and make a new playlist!</a></span>
+				</p> 
+			</div>
+		</div>
+
+		<div class="row"> <p> <br> <br><hr> </p></div>
+		<div class="row"><p><br><h2>More projects on the way!</h2></p></div>
+	</main>
+</div>
+{% endblock %}

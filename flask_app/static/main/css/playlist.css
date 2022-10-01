@@ -1,0 +1,129 @@
+#genre-container {
+  display: inline-grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 100%;
+
+}
+
+#music-card {
+  display: grid;
+  grid-gap: 5px;
+  padding: 10px;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+  margin: 0 auto;  
+
+}
+
+#music-card img {
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 170px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+#music-card p {
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+#checkbox {
+  height: 100%;
+  width: 100%;
+}
+
+#music-card:hover {
+  background-color: #ccc;
+}
+
+.square {
+  font-family: "helvetica";
+  border: 2px solid #3a3a3c;
+  min-width: 60px;
+  min-height: 60px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #1e1136;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#checkmark {
+    display: none;
+    width: 22px;
+    height:22px;
+    background: #c9a300;
+    margin-left: 80%;
+    border-radius:50%;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+
+#checkmark:before{
+    content:"";
+    position: absolute;
+    width:3px;
+    height:9px;
+    background-color:#fff;
+    left:11px;
+    top:6px;
+}
+
+#checkmark:after{
+    content:"";
+    position: absolute;
+    width:3px;
+    height:3px;
+    background-color:#fff;
+    left:8px;
+    top:12px;
+}
+
+.check {
+  color: #65d26e;
+}
+
+.popout {
+    animation: popout 1s ease;
+    -webkit-animation: popout 1s ease;
+}
+
+@keyframes popout {
+    from{transform:scale(0)}
+    80%{transform:scale(1.2)}
+    to{transform:scale(1)}
+}
+
+@-webkit-keyframes popout {
+    from{-webkit-transform:scale(0)}
+    80%{-webkit-transform:scale(1.2)}
+    to{-webkit-transform:scale(1)}
+}
+
+.submit-button {
+  font-family: "helvetica";
+  height: 75px;
+  width: 75px;
+  border: solid 2px #151d5c;
+  background-color: #5dc265;
+  color: #000000;
+  font-size: 90%;
+  font-weight: bolder;
+  position: fixed;
+  top: 85vh;
+  right: 1%;
+  z-index: 300;
+  border-radius: 37px;
+}
+
+.submit-button:hover {
+  background-color: #51a858;
+  color: #FFFFFF;
+}
+

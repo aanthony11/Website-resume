@@ -1,0 +1,132 @@
+/* Nav-bar styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'segoe ui';
+}
+
+.nav {
+  height: 9vh;
+  width: 100%;
+  background-color: #827268;
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: inline;
+  margin-left: 3vw;
+  margin-top: 5vw;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  height: 5vh;
+  font-size: 22px;
+  color: #fff;
+  vertical-align: -3vh;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+  margin-top: 1%;
+}
+
+/* Keep links evenly spaced */
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 1vh 1vw 1vh 1vw;
+  text-decoration: none;
+  color: #efefef;
+}
+
+/* Change background color on hover */
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #ccc;
+}
+
+/* Don't need to keep track of nav check in this layout */
+.nav > #nav-check {
+  display: none;
+}
+
+.nav-links > a {
+	line-height: 25px;
+	margin-bottom: -15px;
+}
+
+.nav-links > #linkedinImg > img {
+	width: 3vw;
+	height: 3vh;
+}
+
+/* Nav bar updates to three bar box*/
+@media (max-width:650px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+
+  /* update width and height of span tags for nav bar */
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    overflow-y: hidden;
+  }
+
+  /* Links that will display when tapping on nav-bar button */
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+    padding: 3vh 3vw 3vh 3vw;
+
+  }
+
+  /* toggle height when button pressed */
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0;
+  }
+
+  /* toggle height when button pressed */
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+
+  /* LinkedIn image now just shows LinkedIn text */
+  .nav-links > #linkedinImg > img {
+	display: none;
+  }
+
+  .nav-links > #linkedinImg:after {
+	content: "LinkedIn";
+  }
+
+
+}

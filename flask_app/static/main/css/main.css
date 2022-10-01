@@ -1,0 +1,175 @@
+* {
+  /* Makes dealing with element sizes easier */
+  box-sizing: border-box;
+  font-family: 'segoe ui';
+}
+
+/* Remove margins and padding */
+body {
+  margin: 0;
+}
+
+/* make image take up full width */
+#profile-pic {
+	width: 100%; 
+	display: block;
+}
+
+
+/* Create two equal columns that floats next to each other */
+.column-img {
+  float: left;
+  width: 50%;
+  margin-top: 10vh;
+  border: 3px solid #c32143;
+
+
+}
+
+/* second column in row */
+.column-text {
+  float: left;
+  width: 50%;
+  padding: 1vw;
+  max-height: 75vh;
+  margin-top: 5vw;
+  text-align: justify;
+  text-justify: inter-word;
+  overflow: auto;
+
+}
+
+/* remove padding from profile image */
+#img {
+	padding: 0;	
+}
+
+/* Set max height and widths of a row and justify text content */
+.row {
+	max-height: 50vh;
+	max-width: 80vw;
+	margin: 0 auto;
+	text-align: center;
+	align-content: center;
+}
+
+/* puts empty space after a row */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Change size of <hr> line */
+.hr {
+	margin: 10vh;
+}
+
+.text {
+  font-style: italic;
+  margin-top: 2vh;
+}
+
+#projectText {
+	justify-content: center;
+	align-items: center;
+	margin-top: 15%;
+}
+
+#img-piano {
+  margin-top: 5%;
+}
+
+/* Style feedback form when it appears */
+#form-wrapper {
+  display: none;
+  width: 50vw;
+  height: 55vh;
+  float: left;
+  padding: 3vw 3vh 3vw 3vh;
+  background-color: #333333;
+  position: fixed;
+  top: 30vh;
+  right: 25%;
+
+}
+
+/* Style feedback button on side of page */
+.feedback-button {
+  font-family: "helvetica";
+  transform: rotate(-90deg);
+  height: 5vh;
+  width: 12vw;
+  border: solid 5px #CCCCCC;
+  background-color: #333333;
+  color: #FFFFFF;
+  font-size: 90%;
+  font-weight: bolder;
+  position: fixed;
+  top: 50vh;
+  right: -3.5%;
+  z-index: 300;
+}
+
+.feedback-inputrow {
+  font-family: "helvetica";
+  width: 100%;
+  margin-bottom: 2vh;
+  padding: 1vw 1vh 1vw 2vh;
+
+
+}
+
+/* Styling for textarea comment box */
+.comment {
+  font-family: "helvetica";
+  width: 100%;
+  margin-bottom: 1vh;
+  padding: 1vw 1vh 5vw 2vh;
+  resize:  vertical;
+  min-height: 20vh;
+  max-height: 35vh;
+}
+
+/* Styling for submit button on form */
+.submit {
+  font-family: "helvetica";
+  background-color: #3498db;
+  width: 100%;
+  padding: 2vw;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+/* Change color when buttons are hovered */
+.comment + .submit:hover, .feedback-button:hover {
+  background-color:  #507a96;
+  color: #dedede;
+}
+
+
+/* Columns stack on top of each other */
+@media screen and (max-width:650px)
+ {
+  .column-text {
+    width: 100%;
+    max-width: 80vh;
+  }
+
+  .column-img {
+  	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 100%;
+    max-width: 80vh;
+
+  }
+
+  .row hr {
+  	display: none;
+  }
+
+  .feedback-button {
+    font-size: 50%;
+  }
+}

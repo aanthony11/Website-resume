@@ -1,0 +1,199 @@
+#container {
+  display: flex;
+  background-color: black;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  color: #873253;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0.4rem 0 0.4rem 0;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+#board {
+  display: grid;
+  grid-gap: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.square {
+  font-family: "helvetica";
+  border: 2px solid #3a3a3c;
+  min-width: 60px;
+  min-height: 60px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #1e1136;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#keyboard-container {
+  width: 50%;
+  height: 200px;
+
+  margin: auto;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 8px;
+  touch-action: manipulation;
+}
+
+.keyboard-row button {
+  font-family: inherit;
+  font-weight: bold;
+  border: 0;
+  padding: 0;
+  height: 58px;
+  cursor: pointer;
+  background-color: #b1b4b5;
+  color: #d7dadc;
+  flex-grow: 1;
+  text-transform: uppercase;
+  margin-right: 6px;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.keyboard-row button.wide-button {
+  flex-grow: 1.5;
+}
+
+.wordle-help {
+  display: none;
+  font-family: "helvetica";
+  background-color: #474747;
+  width: 58vw;
+  height: 55vh;
+  float: left;
+  padding: 3vw 3vh 3vw 3vh;
+  position: fixed;
+  top: 30vh;
+  right: 22%;
+}
+
+.wordle-button {
+  font-family: "helvetica";
+  transform: rotate(-90deg);
+  height: 5vh;
+  width: 12vw;
+  border: solid 5px #CCCCCC;
+  background-color: #00a2b8;
+  color: #FFFFFF;
+  font-size: 90%;
+  font-weight: bolder;
+  position: fixed;
+  top: 50vh;
+  left: -3.5%;
+  z-index: 300;
+}
+
+.wordle-button:hover {
+  background-color: #1f6770;
+}
+
+.description {
+  font-family: "helvetica";
+  color: #d1d1d1;
+  list-style: none;
+}
+
+.instructions {
+  font-family: "helvetica";
+  color: #d1d1d1;
+  text-align: center;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
+  list-style: none;
+
+}
+
+.close {
+  font-family: "helvetica";
+  background-color: #a65a58;
+  width: 35%;
+  padding: 2vw;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  margin-top: 1vh;
+  margin-left:  30%;
+}
+
+.close:hover {
+  background-color: #422d2c;
+}
+
+.green {
+  font-family: "helvetica";
+  color: green;
+}
+
+.yellow {
+  font-family: "helvetica";
+  color: yellow;
+  background-color: black;
+}
+
+.gray {
+  font-family: "helvetica";
+  color: gray;
+}
+
+#first {
+  display: none;
+}
+
+.email {
+  font-family: "helvetica";
+  font-style: italic;
+  list-style: none;
+  float: left;
+  text-align: center;
+  padding-left: 25%;
+}
+
+.email:nth-child(5n+1)::after {
+  content: " \1F3C6";
+}
+
+.score {
+  font-style: oblique;
+  font-family: "helvetica";
+  float: right;
+  list-style: none;
+  padding-right: 25%;
+
+}
+
+.user-header {
+  float: left;
+  padding-left: 25%;
+
+}
+
+.score-header {
+  float: right;
+  padding-right: 25%;
+}

@@ -1,0 +1,28 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="row">
+        <!-- Personal image -->
+        <div class="column-img" id="img">
+          <img src="../static/main/images/Me.jpeg" alt="Picture of me :)" id="profile-pic">       
+        </div>
+        
+        <div class="column-text">
+          <!-- Brief description of me -->
+         <p class="text">
+            <h3>Austin Anthony Bio</h3>
+         </p>
+         <p class="bio">
+          I am currently a senior studying Computer Engineering at Michigan State Univerity. Computer Engineering at MSU as allowed me to explore various hardware and software topics. It has also given me the opportunity to study abroad as well. In the summer of 2019 I was able to take a couple classes in Paris, France (which is where this image of me is coming from)!  Although I am majoring in Computer Engineering I have emphasized to take more CSE classes which my major allows me to do. Some of my favorite engineering classes I've taken while at MSU are: Software Engineering (CSE 435), Media Processing and Multimedia (CSE 471), and Embedded Cyber-Physical Systems (ECE 430). This class (CSE 477) has introduced me to HTML, CSS, and JavaScript and I look forward to learning more about it. After graduating, I will start working for Lyft full-time, as a Mobile Engineer (iOS). Michigan State has played a major role into my engineering career, and I am glad I decided for MSU. Go Green! 
+        </p>
+        </div>
+      </div>
+      <!-- Divs used for spacing between bio and fun fact -->
+      <div class="row"> <br></div>
+      <div class="row"> <p> <hr class="hr"> </p></div>
+      <div class="row"> 
+        <p> <span> <h2> Fun fact!</h2> </span> <br> I competed in the Junior Olympics in 2008 in Track and Field!</p>
+      </div>
+{% endblock %}
+
+

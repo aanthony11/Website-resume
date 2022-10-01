@@ -1,0 +1,69 @@
+#short {
+width: 40%;
+margin: auto;
+}
+
+.login-inputrow {
+  font-family: "helvetica";
+  width: 35%;
+  margin-bottom: 2vh;
+  padding: 1vw 1vh 1vw 2vh;
+  margin-left: 33vw;
+
+}
+
+.login-title {
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cent {
+  align-content: center;
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+#failure {
+  text-align: center;
+  color: #b81307;
+  padding-top: 2vh;
+}
+
+/* Changes list style box to an emoji */
+.login-list {
+  list-style-type: "\2B50";
+  text-align: left;
+  margin-left: 5vw;
+  font-size: 20px;
+}
+
+.login-item {
+  margin-bottom: 1vh;
+}
+
+.login-text {
+  margin-left: 1vw;
+}
+
+/* Styling for submit button on form */
+.login-button {
+  font-family: "helvetica";
+  background-color: #3498db;
+  width: 35%;
+  padding: 2vw;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  margin-left: 33vw;
+}
+
+/* Change color when buttons are hovered */
+.login-button:hover {
+  background-color:  #507a96;
+  color: #dedede;
+}

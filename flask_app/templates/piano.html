@@ -1,0 +1,76 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='main/css/piano.css') }}">
+        <!-- Text at top of page -->
+	  		<div class="row">
+	  			<p id="message"> <h3>Behold piano great and old, it's master slumbers in far off cold, if you wish to see anew, call out to it - we see you.</h3></p>
+	  			<hr>
+	  		</div>
+        <div class="row">
+          <p class="title"><h2>The Great Old One</h2></p>
+        </div>
+
+        <!-- Div for piano wrapper - holds 'keys' and 'sharp' notes -->
+  			<div class="piano-keys" id="piano-wrapper">
+  				<div class="key" key-note="C">
+  					<span class="hint">A</span>
+  				</div>
+  				<div class="sharp" id="left" key-note="C#">
+  					<span class="hint">W</span>
+  				</div>
+  				<div class="key" key-note="D">
+  					<span class="hint">S</span>
+  				</div>
+  				<div class="sharp" key-note="D#">
+  					<span class="hint">E</span>
+  				</div>
+  				<div class="key" key-note="E">
+  					<span class="hint">D</span>
+  				</div>
+  				<div class="key" key-note="F">
+  					<span class="hint">F</span>
+  				</div>
+  				<div class="sharp" key-note="F#">
+  					<span class="hint">T</span>
+  				</div>
+  				<div class="key" key-note="G">
+  					<span class="hint">G</span>
+  				</div>
+  				<div class="sharp" key-note="G#">
+  					<span class="hint">Y</span>
+  				</div>
+  				<div class="key" key-note="A">
+  					<span class="hint">H</span>
+  				</div>
+  				<div class="sharp" key-note="A#">
+  					<span class="hint">U</span>
+  				</div>
+  				<div class="key" key-note="B">
+  					<span class="hint">J</span>
+  				</div>
+  				<div class="key" key-note="C2">
+  					<span class="hint">K</span>
+  				</div>
+  				<div class="sharp" key-note="C#2">
+  					<span class="hint">O</span>
+  				</div>
+  				<div class="key" key-note="D2">
+  					<span class="hint">L</span>
+  				</div>
+  				<div class="sharp" key-note="D#2">
+  					<span class="hint">P</span>
+  				</div>
+  				<div class="key" key-note="E2">
+  					<span class="hint">;</span>
+  				</div>
+  			</div>
+
+        <!-- hidden image not displayed until secret message input -->
+  			<div class="img-wrapper fade-in" id="creepy-img">
+  				 <img src="../static/main/images/texture.jpeg" alt="Creepy Image" loading="lazy">
+  			</div>
+		</div>
+		<script src="{{ url_for('static', filename='main/js/piano.js') }}" defer></script>
+
+{% endblock %}

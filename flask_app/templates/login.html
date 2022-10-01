@@ -1,0 +1,76 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss%}
+<!--     <link rel="stylesheet" href="{{ url_for('static', filename='main/css/login.css') }}">
+ -->      <link rel="stylesheet" type="text/css" href="../static/main/css//newLogin.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+{% endblock%}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+{% endblock %}
+
+
+{% block maincontent %}
+<!-- <br><br>
+<h3 class="login-title">Login</h3>
+<hr id="short">
+<br>
+<div id="login-wrapper">
+    <input type="email" name="email" required placeholder="Email" class="login-inputrow" title="Input email into form" id="email">
+    <br>
+    <input type="password" name="password" required placeholder="Password" class="login-inputrow" title="input password into form" id='password'>
+
+    <div class="wrapper">
+      <p class="sign-up">
+        <a href="/signUp" class="cent">Dont have an account yet? Sign Up!</a>
+      </p>
+      <br>
+    </div>
+    
+
+    <br>
+    <button class="login-button" onclick="checkCredentials()">Login</button>
+    <p id="failure"></p>
+</div> -->
+
+<div>
+  <img class="wave" src="../static/main/images/wave.png">
+  <div class="container">
+    <div class="img">
+      <img src="../static/main/images/bg.svg">
+    </div>
+    <div class="login-content">
+      <form action="#">
+        <img src="../static/main/images/avatar.svg">
+        <h2 class="title">Welcome to the Vlog Network</h2>
+              <div class="input-div one">
+                 <div class="i">
+                    <i class="fas fa-user"></i>
+                 </div>
+                 <div class="div">
+                    <h5>Username</h5>
+                    <input type="text" class="input" id="email">
+                 </div>
+              </div>
+              <div class="input-div pass">
+                 <div class="i"> 
+                    <i class="fas fa-lock"></i>
+                 </div>
+                 <div class="div">
+                    <h5>Password</h5>
+                    <input type="password" class="input" id="pass">
+                 </div>
+              </div>
+              <a href="#">Forgot Password?</a>
+              <input type="submit" class="btn" value="Login" onclick="checkCredentials()">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="{{ url_for('static', filename='main/js/login.js') }}" defer></script>
+{% endblock %}

@@ -1,0 +1,23 @@
+/* Styling for the feedback on the processfeedback page */
+
+.feedback-title {
+	text-align: center;
+	margin-top: 2vh;
+}
+
+/* Changes list style box to an emoji */
+.feedback-list {
+	list-style-type: "\2B50";
+	text-align: left;
+	margin-left: 5vw;
+	font-size: 20px;
+}
+
+.feedback-item {
+	margin-bottom: 1vh;
+}
+
+.feedback-text {
+	margin-left: 1vw;
+}
+
